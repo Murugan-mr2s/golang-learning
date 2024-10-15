@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func infinitefor(in <-chan string) {
@@ -17,6 +16,7 @@ func infinitefor(in <-chan string) {
 	}
 }
 
+/*
 func main() {
 
 	readOnlyChannel := make(chan string)
@@ -28,3 +28,4 @@ func main() {
 
 	fmt.Println("main go finished")
 }
+*/
