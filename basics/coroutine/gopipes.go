@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func readPipe(data []int) <-chan int {
 	out := make(chan int)
 
@@ -27,6 +25,7 @@ func processPipe(in <-chan int) <-chan int {
 	return out
 }
 
+/*
 func main() {
 
 	data := []int{1, 2, 3, 4, 5}
@@ -40,3 +39,4 @@ func main() {
 	}
 
 }
+*/

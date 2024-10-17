@@ -2,9 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"math/rand"
-	"time"
 )
 
 func Generator(ctx context.Context, genvalue func() int) <-chan int {
@@ -25,6 +22,7 @@ func Generator(ctx context.Context, genvalue func() int) <-chan int {
 	return stream
 }
 
+/*
 func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
@@ -41,3 +39,23 @@ func main() {
 	}
 
 }
+*/
+/*
+func main() {
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	randfunc := func() int {
+		return rand.Intn(1000)
+	}
+	randStream := Generator(ctx, randfunc)
+	for v := range randStream {
+		fmt.Println(v)
+		if v%100 == 0 {
+			break // break for loop and call defer cancel
+		}
+	}
+
+}
+*/
